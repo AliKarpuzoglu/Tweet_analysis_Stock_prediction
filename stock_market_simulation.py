@@ -54,8 +54,9 @@ class Trader:
     
     def visualize_money(self):
         plt.plot(np.arange(1, len(self.history) + 1), self.history)
-        plt.ylabel('money')
-        plt.xlabel('day')
+        plt.ylabel('Net Worth in $')
+        plt.xlabel('trading day')
+        plt.ylim((12000,14000))
         plt.show()
 
 def load_stock_prices_from_json(path="./processed_data/stock/stocks_cleaned.json"):
