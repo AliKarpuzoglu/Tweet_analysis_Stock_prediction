@@ -5,6 +5,7 @@ from random import randint
 import matplotlib.pyplot as plt
 
 class Trader:
+    
     def __init__(self, stock_prices, buy_or_sell):
         if len(stock_prices) != len(buy_or_sell):
             raise AttributeError("buy_or_sell actions list size has to be equal to stock_prices list size!")
@@ -57,6 +58,7 @@ class Trader:
         plt.ylabel('Net Worth in $')
         plt.xlabel('trading day')
         plt.ylim((12000,14000))
+        plt.hlines(self.history[0],0,len(self.history),linestyles="dashed",label="starting amount")
         plt.show()
 
 def load_stock_prices_from_json(path="./processed_data/stock/stocks_cleaned.json"):
